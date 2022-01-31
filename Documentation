@@ -1,0 +1,12 @@
+GET "https://10.16.8.71:5000/requestInfo/?manifest=<manifest>&location=<location>"
+
+
+
+RETURN:
+{
+    "uuid":{
+        "name":"",
+        "age":"",
+        "picture":""
+    }
+}
