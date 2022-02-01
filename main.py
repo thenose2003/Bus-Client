@@ -36,24 +36,28 @@ while going:
 
             manifest = scan['uuids']  # set the new manifest
 
-        try:  # try to update the server
-            info = requests.get(
-                url + 'requestInfo/?id=' + busID + '&manifest=' + json.dumps(manifest) +
-                '&long=' + str(location()[0]) + '&lat=' + str(location()[1])).json()
+            try:  # try to update the server
+                info = requests.get(
+                print(manifest)
+                    url + 'requestInfo/?id=' + busID + '&manifest=' + json.dumps({'uuids': manifest}) +
+                    '&long=' + str(location()[0]) + '&lat=' + str(location()[1])).json()
 
-        except requests.exceptions.ConnectionError:  # print an error if that fails
-            print('ERROR: Could not contact the server')
+            except requests.exceptions.ConnectionError:  # print an error if that fails
+                print('ERROR: Could not contact the server')
 
-        else:  # if there is new data
-            if info['data']:
-                p_new = info['data'].values()
+            else:  # if there is new data
+                if info['data']:
+                    p_new = info['data'].values()
 
-                sendInfo(p_new)
+                    sendInfo(p_new)
 
-            if info['departs']:
-                departs = info['departs']
+                if info['departs']:
+                    departs = info['departs']
 
-                removeInfo(departs)
+                    removeInfo(departs)
+
+        else:
+            requests.get(url + 'locationPing/?id={}&long={}&lat={}'.format(busId, location()[0], location()[1])
 
     if datetime.now().minute % 5 == 0 and datetime.now().second < 10:
         with open('info.json', 'w') as json_file:
