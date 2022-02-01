@@ -37,8 +37,8 @@ while going:
             manifest = scan['uuids']  # set the new manifest
 
             try:  # try to update the server
-                info = requests.get(
                 print(manifest)
+                info = requests.get(
                     url + 'requestInfo/?id=' + busID + '&manifest=' + json.dumps({'uuids': manifest}) +
                     '&long=' + str(location()[0]) + '&lat=' + str(location()[1])).json()
 
