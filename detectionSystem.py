@@ -1,4 +1,5 @@
 import mercury
+import time
 
 
 def setup():
@@ -10,8 +11,10 @@ def setup():
 
             return reader
 
-        except TypeError:
-            print('broke')
+        except TypeError as e:
+            print(e)
+
+        time.sleep(1)
 
 
 def detect(r):  # returns the manifest
