@@ -32,7 +32,7 @@ while going:
 
     if scan['success']:  # if the scanner returned anything
 
-        if scan['uuids'] != manifest:  # detect a change in manifest
+        if sorted(scan['uuids']) != sorted(manifest):  # detect a change in manifest
 
             manifest = scan['uuids']  # set the new manifest
 
@@ -45,8 +45,8 @@ while going:
             except requests.exceptions.ConnectionError:  # print an error if that fails
                 print('ERROR: Could not contact the server')
 
-            else:  # if there is new data
-                if info['data']:
+            else:
+                if info['data']:  # if there is new data
                     p_new = info['data'].values()
 
                     sendInfo(p_new)
@@ -57,7 +57,7 @@ while going:
                     removeInfo(departs)
 
         else:
-            requests.get(url + 'locationPing/?id={}&long={}&lat={}'.format(busID, location()[0], location()[1]))
+            requests.get(url + 'locationPing/?id={}&long={}&lat={}'.format(busId, location()[0], location()[1])
 
     if datetime.now().minute % 5 == 0 and datetime.now().second < 10:
         with open('info.json', 'w') as json_file:
