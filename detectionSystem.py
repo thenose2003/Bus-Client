@@ -29,6 +29,9 @@ def detect(r):  # returns the manifest
             print('timeout during read')
             return {'success': False, 'uuids': None}
 
+        except RuntimeError as e:
+            print(e)
+
 
 if __name__ == '__main__':
     print(detect())
