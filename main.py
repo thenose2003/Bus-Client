@@ -57,7 +57,7 @@ while going:
                     removeInfo(departs)
 
         else:
-            requests.get(url + 'locationPing/?id={}&long={}&lat={}'.format(busId, location()[0], location()[1])
+            requests.get(url + 'locationPing/?id={}&long={}&lat={}'.format(busId, location()[0], location()[1]))
 
     if datetime.now().minute % 5 == 0 and datetime.now().second < 10:
         with open('info.json', 'w') as json_file:
