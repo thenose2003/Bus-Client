@@ -32,7 +32,7 @@ while going:
 
     if scan['success']:  # if the scanner returned anything
 
-        if sorted(scan['uuids']) != sorted(manifest):  # detect a change in manifest
+        if scan['uuids'] != manifest:  # detect a change in manifest
 
             manifest = scan['uuids']  # set the new manifest
 
