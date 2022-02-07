@@ -18,7 +18,7 @@ while True:
         if data['success']:
             epcs = data['uuids']
 
-            vMan = requests.get(url + '/verifyManifest/?man=' + json.dumps(epcs))
+            vMan = requests.get(url + '/verifyManifest/?man=' + json.dumps(epcs)).json()
 
             epc_list = [x for x in epcs if x not in vMan]
 
