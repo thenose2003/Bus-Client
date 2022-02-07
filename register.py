@@ -42,7 +42,7 @@ while True:
                     age = input('age:  ')
                     gender = input('gender: ')
 
-                    if name and age and epc and age and gender:
+                    if name and age and age and gender:
                         requests.get('http://192.168.1.101:5000/newPassenger/?name={}&tag={}&age={}&gender={}'.format(name, tag, age, gender))
 
                         break
