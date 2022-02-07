@@ -1,5 +1,5 @@
 def location():  # returns the location
-    return 123, 123
+    return 0, 0
 
 
 if __name__ == '__main__':
