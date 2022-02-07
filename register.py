@@ -9,7 +9,7 @@ while True:
 
     c = input('--')
 
-    if c == exit:
+    if c == 'exit':
         break
 
     if not c or c =='scan':
