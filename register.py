@@ -3,7 +3,7 @@ from detectionSystem import setup, detect
 import json
 
 reader = setup()
-url = 'http://192.168.1.101:5000/'
+url = 'http://192.168.1.100:5000/'
 
 while True:
 
