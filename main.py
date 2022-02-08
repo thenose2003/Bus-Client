@@ -9,7 +9,7 @@ import requests
 if __name__ != '__main__':  # Raises an error if someone tries running this as a package for some reason
     raise "This isn't a package idiot"
 
-url = 'http://192.168.1.101:5000/'
+url = 'http://192.168.1.100:5000/'
 busID = open('ID.txt', 'r').read()
 info = {}  # Defines the information json
 sec = -5  # Defines seconds in the minute
