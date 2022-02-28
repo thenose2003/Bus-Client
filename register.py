@@ -33,6 +33,9 @@ while True:
 
                 try:
                     tag = epc_list[int(d)]
+                    
+                except IndexError:
+                    pass
 
                 except ValueError:
                     pass
@@ -44,5 +47,17 @@ while True:
 
                     if name and age and age and gender:
                         requests.get('http://192.168.1.101:5000/newPassenger/?name={}&tag={}&age={}&gender={}'.format(name, tag, age, gender))
+
+                    e = input('perms: ')
+
+                    if e == 'n':
+                        break
+
+                    else:
+                        check = requests.get('http://192.168.1.101:5000/checkUser/?user=' + e)
+
+                        if check['success']:
+
+                            requests.get('http://192.168.1.101:5000/addPerms/?data=' + json.dumps({'user': e, 'passengers': tag}))
 
                         break
