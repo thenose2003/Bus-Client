@@ -27,7 +27,7 @@ else:
     sys.exit()
 
 # Define relative path to wrapper directory: "..\..\..\..\Middleware\wrapper\python"
-PATHTOWRAPPER = ".." + platformSlash + ".." + platformSlash + "Downloads\\en.STSW-ST25RU-SDK_v3.0.2 (1)\\ST25RU3993 STUHFL SDK package v3-0-2-0\\Middleware" + platformSlash + "wrapper" + platformSlash + "python"
+PATHTOWRAPPER = ".." + platformSlash + "Big-Scanner-Stuff/Middleware" + platformSlash + "wrapper" + platformSlash + "python"
 print(PATHTOWRAPPER)
 # Check Python wrapper and related DLL can be reached
 if not os.path.isdir(os.getcwd() + platformSlash + PATHTOWRAPPER):
