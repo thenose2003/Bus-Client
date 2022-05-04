@@ -1,5 +1,5 @@
 def location():  # returns the location
-    return 32.418016, -104.228938
+    return -104.228938, 32.418016
 
 
 if __name__ == '__main__':
