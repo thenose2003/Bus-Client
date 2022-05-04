@@ -158,8 +158,9 @@ class CycleData(STUHFL.ICycleData):
             tagepc = ''
             for j, val in enumerate(tag.epc):
                 tagepc += "{:02x}".format(val)
-
-            tags.append(tagepc)
+                
+            if tagepc not in tags:
+                tags.append(tagepc)
 
         return STUHFL.STUHFL_ERR_NONE
 
