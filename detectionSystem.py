@@ -153,13 +153,13 @@ class CycleData(STUHFL.ICycleData):
         global tags
 
         # print EPC list
+        tags = []
         for i, tag in enumerate(data.tagList):
             tagepc = ''
             for j, val in enumerate(tag.epc):
                 tagepc += "{:02x}".format(val)
 
-            if tagepc not in tags:
-                tags.append(tagepc)
+            tags.append(tagepc)
 
         return STUHFL.STUHFL_ERR_NONE
 
